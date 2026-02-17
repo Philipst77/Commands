@@ -1,0 +1,115 @@
+#################################################
+# GIT COMMANDS
+#################################################
+
+# View commit history (graph view)
+git log --oneline --graph --decorate --all
+
+# Reset to specific commit (WARNING: deletes later commits locally)
+git reset --hard <commit_hash>
+
+# Pull with rebase
+git pull --rebase origin main
+
+# Clone repo
+git clone <repo_url>
+
+# Change directory
+cd <project_folder>
+
+
+#################################################
+# DOCKER IMAGE MANAGEMENT
+#################################################
+
+# List images
+docker images
+
+# Remove image
+docker rmi <image_name_or_id>
+
+# Tag image
+docker tag <local_image> <dockerhub_username>/<repo_name>:latest
+
+# Push image to Docker Hub
+docker push <dockerhub_username>/<repo_name>:latest
+
+
+#################################################
+# DOCKER BUILD / RUN
+#################################################
+
+# Build backend image
+docker build -t youtube-backend ./backend
+
+# Build frontend image
+docker build -t youtube-frontend ./frontend
+
+# Run backend container
+docker run -p 5001:5001 youtube-backend
+
+# Run frontend container
+docker run -p 5173:5173 youtube-frontend
+
+# Show running containers
+docker ps
+
+# Stop multi-container app
+docker compose down
+
+# Run multi-container app
+docker compose up
+
+# Build and run containers
+docker compose up --build
+
+
+#################################################
+# NPM COMMANDS
+#################################################
+
+npm run dev
+npm run build
+npm run deploy
+
+
+#################################################
+# PYTHON VIRTUAL ENVIRONMENT
+#################################################
+
+# Create virtual environment
+python3 -m venv CS682venv
+
+# Activate virtual environment
+source CS682venv/bin/activate
+
+# Install dependencies
+pip3 install -r requirements.txt
+
+# Add venv as Jupyter kernel
+python -m ipykernel install --user --name=CS682venv
+
+# Launch Jupyter
+jupyter lab
+
+
+#################################################
+# LINUX PROCESS COMMANDS
+#################################################
+
+# Show process tree using ps
+ps auxf
+
+# Show process tree (cleaner)
+pstree
+
+# Find specific process (case insensitive)
+ps aux | grep -i <process_name>
+
+# Kill process by name (matches full command)
+pkill -f <process_name>
+
+# Example:
+# ps aux | grep -i python
+# pkill -f python
+
